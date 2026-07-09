@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "name": "macroTrack",
+    "slug": "macrotrack",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "scheme": "macrotrack",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "plugins": [
+      "expo-asset"
+    ],
+    "newArchEnabled": false
+  }
+}
