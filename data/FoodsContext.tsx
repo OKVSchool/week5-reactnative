@@ -42,30 +42,24 @@ export function FoodsProvider({ children }: { children: ReactNode }) {
   }
 
   function addOrIncrementFood(food: Omit<FoodTemplate, 'id' | 'usageCount'>) {
-    setFoods(prev => {
-      const existing = prev.find(f => f.name.toLowerCase() === food.name.toLowerCase());
-      const updated = existing
-        ? prev.map(f => f.id === existing.id ? { ...f, usageCount: f.usageCount + 1 } : f)
-        : [...prev, { ...food, id: Date.now().toString(), usageCount: 1 }];
-      save(updated);
-      return updated;
-    });
+    const existing = foods.find(f => f.name.toLowerCase() === food.name.toLowerCase());
+    const updated = existing
+      ? foods.map(f => f.id === existing.id ? { ...f, usageCount: f.usageCount + 1 } : f)
+      : [...foods, { ...food, id: Date.now().toString(), usageCount: 1 }];
+    setFoods(updated);
+    save(updated);
   }
 
   function editFood(id: string, updates: Partial<Omit<FoodTemplate, 'id' | 'usageCount'>>) {
-    setFoods(prev => {
-      const updated = prev.map(f => f.id === id ? { ...f, ...updates } : f);
-      save(updated);
-      return updated;
-    });
+    const updated = foods.map(f => f.id === id ? { ...f, ...updates } : f);
+    setFoods(updated);
+    save(updated);
   }
 
   function deleteFood(id: string) {
-    setFoods(prev => {
-      const updated = prev.filter(f => f.id !== id);
-      save(updated);
-      return updated;
-    });
+    const updated = foods.filter(f => f.id !== id);
+    setFoods(updated);
+    save(updated);
   }
 
   return (
