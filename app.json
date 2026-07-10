@@ -13,6 +13,26 @@
     "plugins": [
       "expo-asset"
     ],
-    "newArchEnabled": false
+    "newArchEnabled": false,
+    "extra": {
+      "eas": {
+        "projectId": "01a076ae-b498-45dd-8fae-78b52ec9f544"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/01a076ae-b498-45dd-8fae-78b52ec9f544"
+    },
+    "android": {
+      "package": "com.okvschool.macrotrack"
+    },
+    "ios": {
+      "bundleIdentifier": "com.okvschool.macrotrack",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    }
   }
 }

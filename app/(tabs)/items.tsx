@@ -43,7 +43,10 @@ export default function ItemsScreen() {
           }
           return (
             <View style={styles.card}>
-              <Text style={styles.name}>{item.name}</Text>
+              <View style={styles.nameRow}>
+                <Text style={styles.name}>{item.name}</Text>
+                <Text style={styles.time}>{item.time}</Text>
+              </View>
               <Text style={styles.macros}>
                 {item.calories} kcal · {item.protein}g P · {item.fat}g F · {item.carbs}g C
               </Text>
@@ -59,6 +62,8 @@ const styles = StyleSheet.create({
   container:  { flex: 1, paddingHorizontal: 16 },
   dateHeader: { fontSize: 15, fontWeight: '700', marginTop: 20, marginBottom: 6, color: '#555' },
   card:       { paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#f9f9f9', borderRadius: 10, borderWidth: 1, borderColor: '#eee' },
-  name:       { fontSize: 15, fontWeight: '500' },
+  nameRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
+  name:       { fontSize: 15, fontWeight: '500', flex: 1 },
+  time:       { fontSize: 13, color: '#aaa' },
   macros:     { fontSize: 13, color: '#777', marginTop: 2 },
 });
