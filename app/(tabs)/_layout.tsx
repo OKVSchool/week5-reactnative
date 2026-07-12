@@ -43,6 +43,15 @@ export default function TabLayout() {
           tabBarIcon: ({ focused }) => <TabEmoji symbol="📚" focused={focused} />,
         }}
       />
+      {__DEV__ && (
+        <Tabs.Screen
+          name="devtools"
+          options={{
+            title: 'DevTools',
+            tabBarIcon: ({ focused }) => <TabEmoji symbol="🛠️" focused={focused} />,
+          }}
+        />
+      )}
     </Tabs>
   );
 }

@@ -1,7 +1,9 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import * as Notifications from 'expo-notifications';
 import { SEED_MEALS, Meal } from './meals';
 import { useError } from './ErrorContext';
+import { scheduleInactivityReminder } from '../utils/notifications';
 
 const STORAGE_KEY = 'meals_v3';
 
@@ -29,6 +31,8 @@ export function MealsProvider({ children }: { children: ReactNode }) {
         .catch(() => setStorageError('Save Error. Re-enter meal'));
       return updated;
     });
+    Notifications.cancelAllScheduledNotificationsAsync()
+      .then(() => scheduleInactivityReminder());
   }
 
   return <MealsContext.Provider value={{ meals, addMeal }}>{children}</MealsContext.Provider>;
