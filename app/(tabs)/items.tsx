@@ -37,6 +37,13 @@ export default function ItemsScreen() {
       <FlatList
         data={buildListData(meals)}
         keyExtractor={item => item.id}
+        ListEmptyComponent={
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyIcon}>📋</Text>
+            <Text style={styles.emptyTitle}>No meals logged yet</Text>
+            <Text style={styles.emptySubtitle}>Your meal history will appear here</Text>
+          </View>
+        }
         renderItem={({ item }) => {
           if (item.type === 'header') {
             return <Text style={styles.dateHeader}>{fmtDate(item.date)}</Text>;
@@ -59,7 +66,11 @@ export default function ItemsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:  { flex: 1, paddingHorizontal: 16 },
+  container:    { flex: 1, paddingHorizontal: 16 },
+  emptyState:   { alignItems: 'center', justifyContent: 'center', paddingVertical: 80 },
+  emptyIcon:    { fontSize: 48, marginBottom: 16 },
+  emptyTitle:   { fontSize: 20, fontWeight: '700', marginBottom: 8 },
+  emptySubtitle:{ fontSize: 14, color: '#aaa', textAlign: 'center' },
   dateHeader: { fontSize: 15, fontWeight: '700', marginTop: 20, marginBottom: 6, color: '#555' },
   card:       { paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#f9f9f9', borderRadius: 10, borderWidth: 1, borderColor: '#eee' },
   nameRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },

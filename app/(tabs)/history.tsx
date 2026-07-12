@@ -69,46 +69,58 @@ export default function HistoryScreen() {
     }));
   }
 
+  const hasData = meals.length > 0;
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Text style={styles.heading}>Progress</Text>
-        <Svg width={W} height={H}>
-          {KEYS.map(key => (
-            <Polyline
-              key={`line-${key}`}
-              points={getPoints(key).map(p => `${p.x},${p.y}`).join(' ')}
-              fill="none"
-              stroke={COLORS[key]}
-              strokeWidth={2}
-            />
-          ))}
-          {KEYS.map(key =>
-            getPoints(key).map((p, i) => (
-              <Circle key={`dot-${key}-${i}`} cx={p.x} cy={p.y} r={3} fill={COLORS[key]} />
-            ))
-          )}
-          {dayLabels.map((label, i) => (
-            <SvgText
-              key={i}
-              x={PAD.l + (i / (days.length - 1)) * IW}
-              y={H - 8}
-              fontSize={10}
-              textAnchor="middle"
-              fill="#666"
-            >
-              {label}
-            </SvgText>
-          ))}
-        </Svg>
-        <View style={styles.legend}>
-          {KEYS.map(key => (
-            <View key={key} style={styles.legendItem}>
-              <View style={[styles.dot, { backgroundColor: COLORS[key] }]} />
-              <Text style={styles.legendLabel}>{key.charAt(0).toUpperCase() + key.slice(1)}</Text>
+        {!hasData ? (
+          <View style={styles.emptyState}>
+            <Text style={styles.emptyIcon}>📊</Text>
+            <Text style={styles.emptyTitle}>No data yet</Text>
+            <Text style={styles.emptySubtitle}>Add meals to see your progress chart</Text>
+          </View>
+        ) : (
+          <>
+            <Svg width={W} height={H}>
+              {KEYS.map(key => (
+                <Polyline
+                  key={`line-${key}`}
+                  points={getPoints(key).map(p => `${p.x},${p.y}`).join(' ')}
+                  fill="none"
+                  stroke={COLORS[key]}
+                  strokeWidth={2}
+                />
+              ))}
+              {KEYS.map(key =>
+                getPoints(key).map((p, i) => (
+                  <Circle key={`dot-${key}-${i}`} cx={p.x} cy={p.y} r={3} fill={COLORS[key]} />
+                ))
+              )}
+              {dayLabels.map((label, i) => (
+                <SvgText
+                  key={i}
+                  x={PAD.l + (i / (days.length - 1)) * IW}
+                  y={H - 8}
+                  fontSize={10}
+                  textAnchor="middle"
+                  fill="#666"
+                >
+                  {label}
+                </SvgText>
+              ))}
+            </Svg>
+            <View style={styles.legend}>
+              {KEYS.map(key => (
+                <View key={key} style={styles.legendItem}>
+                  <View style={[styles.dot, { backgroundColor: COLORS[key] }]} />
+                  <Text style={styles.legendLabel}>{key.charAt(0).toUpperCase() + key.slice(1)}</Text>
+                </View>
+              ))}
             </View>
-          ))}
-        </View>
+          </>
+        )}
         {foods.length > 0 && (
           <>
             <Text style={styles.foodsLabel}>Your Foods</Text>
@@ -130,7 +142,11 @@ export default function HistoryScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:   { flex: 1, paddingHorizontal: 24, paddingTop: 16 },
+  container:     { flex: 1, paddingHorizontal: 24, paddingTop: 16 },
+  emptyState:    { alignItems: 'center', justifyContent: 'center', paddingVertical: 80 },
+  emptyIcon:     { fontSize: 48, marginBottom: 16 },
+  emptyTitle:    { fontSize: 20, fontWeight: '700', marginBottom: 8 },
+  emptySubtitle: { fontSize: 14, color: '#aaa', textAlign: 'center' },
   heading:     { fontSize: 24, fontWeight: 'bold', marginBottom: 24 },
   legend:      { flexDirection: 'row', flexWrap: 'wrap', gap: 16, marginTop: 16 },
   legendItem:  { flexDirection: 'row', alignItems: 'center', gap: 6 },
