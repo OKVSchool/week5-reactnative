@@ -66,15 +66,15 @@ export default function ItemsScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:    { flex: 1, paddingHorizontal: 16 },
+  container:    { flex: 1, paddingHorizontal: 16, backgroundColor: '#0f0f0f' },
   emptyState:   { alignItems: 'center', justifyContent: 'center', paddingVertical: 80 },
   emptyIcon:    { fontSize: 48, marginBottom: 16 },
-  emptyTitle:   { fontSize: 20, fontWeight: '700', marginBottom: 8 },
-  emptySubtitle:{ fontSize: 14, color: '#aaa', textAlign: 'center' },
-  dateHeader: { fontSize: 15, fontWeight: '700', marginTop: 20, marginBottom: 6, color: '#555' },
-  card:       { paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#f9f9f9', borderRadius: 10, borderWidth: 1, borderColor: '#eee' },
+  emptyTitle:   { fontSize: 20, fontWeight: '700', marginBottom: 8, color: '#f0f0f0' },
+  emptySubtitle:{ fontSize: 14, color: '#888', textAlign: 'center' },
+  dateHeader: { fontSize: 15, fontWeight: '700', marginTop: 20, marginBottom: 6, color: '#888' },
+  card:       { paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#1a1a1a', borderRadius: 10, borderWidth: 1, borderColor: '#2a2a2a' },
   nameRow:    { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
-  name:       { fontSize: 15, fontWeight: '500', flex: 1 },
-  time:       { fontSize: 13, color: '#aaa' },
-  macros:     { fontSize: 13, color: '#777', marginTop: 2 },
+  name:       { fontSize: 15, fontWeight: '500', flex: 1, color: '#f0f0f0' },
+  time:       { fontSize: 13, color: '#555' },
+  macros:     { fontSize: 13, color: '#888', marginTop: 2 },
 });

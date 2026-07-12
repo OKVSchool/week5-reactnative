@@ -39,13 +39,13 @@ export default function FoodDetailScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:       { flex: 1, padding: 20 },
-  heading:         { fontSize: 24, fontWeight: 'bold', marginBottom: 16 },
-  nutrition:       { backgroundColor: '#f9f9f9', borderRadius: 10, padding: 16, gap: 8, borderWidth: 1, borderColor: '#eee', marginBottom: 24 },
-  stat:            { fontSize: 16, color: '#333' },
-  gridLabel:       { fontSize: 18, fontWeight: '700', marginBottom: 4 },
-  placeholderNote: { fontSize: 12, color: '#aaa', marginBottom: 12 },
+  container:       { flex: 1, padding: 20, backgroundColor: '#0f0f0f' },
+  heading:         { fontSize: 24, fontWeight: 'bold', marginBottom: 16, color: '#f0f0f0' },
+  nutrition:       { backgroundColor: '#1a1a1a', borderRadius: 10, padding: 16, gap: 8, borderWidth: 1, borderColor: '#2a2a2a', marginBottom: 24 },
+  stat:            { fontSize: 16, color: '#f0f0f0' },
+  gridLabel:       { fontSize: 18, fontWeight: '700', marginBottom: 4, color: '#f0f0f0' },
+  placeholderNote: { fontSize: 12, color: '#555', marginBottom: 12 },
   grid:            { flexDirection: 'row', flexWrap: 'wrap', gap: 6 },
-  square:          { width: 28, height: 28, borderRadius: 4, backgroundColor: '#eee' },
-  squareFilled:    { backgroundColor: '#4ECDC4' },
+  square:          { width: 28, height: 28, borderRadius: 4, backgroundColor: '#2a2a2a' },
+  squareFilled:    { backgroundColor: '#6366f1' },
 });

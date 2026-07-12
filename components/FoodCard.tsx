@@ -24,13 +24,13 @@ export default function FoodCard({ food, onEdit, onDelete }: Props) {
 }
 
 const styles = StyleSheet.create({
-  card:    { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#f9f9f9', borderRadius: 10, borderWidth: 1, borderColor: '#eee' },
+  card:    { flexDirection: 'row', alignItems: 'center', paddingVertical: 12, paddingHorizontal: 14, marginBottom: 8, backgroundColor: '#1a1a1a', borderRadius: 10, borderWidth: 1, borderColor: '#2a2a2a' },
   info:    { flex: 1 },
-  name:    { fontSize: 15, fontWeight: '500' },
-  macros:  { fontSize: 13, color: '#777', marginTop: 2 },
-  usage:   { fontSize: 12, color: '#aaa', marginTop: 2 },
+  name:    { fontSize: 15, fontWeight: '500', color: '#f0f0f0' },
+  macros:  { fontSize: 13, color: '#888', marginTop: 2 },
+  usage:   { fontSize: 12, color: '#555', marginTop: 2 },
   actions: { gap: 12 },
   action:  { minHeight: 50, justifyContent: 'center' },
-  edit:    { fontSize: 13, color: '#007AFF' },
-  delete:  { fontSize: 13, color: '#FF3B30' },
+  edit:    { fontSize: 13, color: '#818cf8' },
+  delete:  { fontSize: 13, color: '#ef4444' },
 });

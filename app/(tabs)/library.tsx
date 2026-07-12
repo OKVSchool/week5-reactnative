@@ -60,6 +60,7 @@ export default function LibraryScreen() {
             <TextInput
               style={styles.input}
               placeholder="Food name"
+              placeholderTextColor="#555"
               value={form.name}
               onChangeText={v => setForm(f => ({ ...f, name: v }))}
             />
@@ -68,6 +69,7 @@ export default function LibraryScreen() {
                 key={key}
                 style={styles.input}
                 placeholder={key.charAt(0).toUpperCase() + key.slice(1)}
+                placeholderTextColor="#555"
                 keyboardType="numeric"
                 value={form[key]}
                 onChangeText={v => setForm(f => ({ ...f, [key]: v }))}
@@ -87,13 +89,13 @@ export default function LibraryScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:   { flex: 1, paddingHorizontal: 16 },
-  empty:       { marginTop: 40, textAlign: 'center', color: '#aaa' },
-  overlay:     { flex: 1, backgroundColor: 'rgba(0,0,0,0.4)', justifyContent: 'flex-end' },
-  form:        { backgroundColor: '#fff', borderTopLeftRadius: 16, borderTopRightRadius: 16, padding: 24, gap: 12 },
-  formTitle:   { fontSize: 20, fontWeight: 'bold', marginBottom: 4 },
-  input:       { borderWidth: 1, borderColor: '#ccc', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15 },
-  saveBtn:     { backgroundColor: '#000', borderRadius: 8, minHeight: 50, alignItems: 'center', justifyContent: 'center' },
+  container:   { flex: 1, paddingHorizontal: 16, backgroundColor: '#0f0f0f' },
+  empty:       { marginTop: 40, textAlign: 'center', color: '#555' },
+  overlay:     { flex: 1, backgroundColor: 'rgba(0,0,0,0.6)', justifyContent: 'flex-end' },
+  form:        { backgroundColor: '#1a1a1a', borderTopLeftRadius: 16, borderTopRightRadius: 16, padding: 24, gap: 12 },
+  formTitle:   { fontSize: 20, fontWeight: 'bold', marginBottom: 4, color: '#f0f0f0' },
+  input:       { borderWidth: 1, borderColor: '#2a2a2a', borderRadius: 8, paddingHorizontal: 12, paddingVertical: 10, fontSize: 15, backgroundColor: '#242424', color: '#f0f0f0' },
+  saveBtn:     { backgroundColor: '#6366f1', borderRadius: 8, minHeight: 50, alignItems: 'center', justifyContent: 'center' },
   saveBtnText: { color: '#fff', fontSize: 16, fontWeight: '600' },
-  cancelText:  { textAlign: 'center', color: '#888', fontSize: 14, paddingVertical: 4 },
+  cancelText:  { textAlign: 'center', color: '#555', fontSize: 14, paddingVertical: 4 },
 });

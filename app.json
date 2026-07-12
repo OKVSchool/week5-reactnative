@@ -11,7 +11,8 @@
       "web"
     ],
     "plugins": [
-      "expo-asset"
+      "expo-asset",
+      "@react-native-community/datetimepicker"
     ],
     "newArchEnabled": true,
     "extra": {

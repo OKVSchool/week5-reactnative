@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import * as Notifications from 'expo-notifications';
-import { scheduleInactivityReminder, scheduleDailyReminder } from '../utils/notifications';
 import { MealsProvider } from '../data/MealsContext';
 import { FoodsProvider } from '../data/FoodsContext';
 import { ErrorProvider, useError } from '../data/ErrorContext';
@@ -23,11 +22,7 @@ function AppShell({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     Notifications.requestPermissionsAsync().then(({ status }) => {
-      if (status === 'granted') {
-        console.log('Notification permissions granted');
-        scheduleInactivityReminder();
-        scheduleDailyReminder();
-      } else {
+      if (status !== 'granted') {
         console.log('Notification permissions denied — notifications will not show');
       }
     });
@@ -51,8 +46,9 @@ export default function RootLayout() {
               <SafeAreaProvider>
                 <Stack
                   screenOptions={{
-                    headerStyle: { backgroundColor: '#fff' },
-                    headerTitleStyle: { fontWeight: 'bold' },
+                    headerStyle: { backgroundColor: '#111' },
+                    headerTitleStyle: { fontWeight: 'bold', color: '#f0f0f0' },
+                    headerTintColor: '#f0f0f0',
                   }}
                 >
                   <Stack.Screen name="(tabs)" options={{ headerShown: false }} />

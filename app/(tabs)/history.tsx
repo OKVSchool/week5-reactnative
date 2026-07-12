@@ -105,7 +105,7 @@ export default function HistoryScreen() {
                   y={H - 8}
                   fontSize={10}
                   textAnchor="middle"
-                  fill="#666"
+                  fill="#888"
                 >
                   {label}
                 </SvgText>
@@ -142,18 +142,18 @@ export default function HistoryScreen() {
 }
 
 const styles = StyleSheet.create({
-  container:     { flex: 1, paddingHorizontal: 24, paddingTop: 16 },
+  container:     { flex: 1, paddingHorizontal: 24, paddingTop: 16, backgroundColor: '#0f0f0f' },
   emptyState:    { alignItems: 'center', justifyContent: 'center', paddingVertical: 80 },
   emptyIcon:     { fontSize: 48, marginBottom: 16 },
-  emptyTitle:    { fontSize: 20, fontWeight: '700', marginBottom: 8 },
-  emptySubtitle: { fontSize: 14, color: '#aaa', textAlign: 'center' },
-  heading:     { fontSize: 24, fontWeight: 'bold', marginBottom: 24 },
+  emptyTitle:    { fontSize: 20, fontWeight: '700', marginBottom: 8, color: '#f0f0f0' },
+  emptySubtitle: { fontSize: 14, color: '#888', textAlign: 'center' },
+  heading:     { fontSize: 24, fontWeight: 'bold', marginBottom: 24, color: '#f0f0f0' },
   legend:      { flexDirection: 'row', flexWrap: 'wrap', gap: 16, marginTop: 16 },
   legendItem:  { flexDirection: 'row', alignItems: 'center', gap: 6 },
   dot:         { width: 10, height: 10, borderRadius: 5 },
-  legendLabel: { fontSize: 13 },
-  foodsLabel:  { fontSize: 18, fontWeight: '700', marginTop: 28, marginBottom: 8 },
-  foodRow:     { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 50, borderBottomWidth: 1, borderBottomColor: '#eee' },
-  foodName:    { fontSize: 15 },
-  foodArrow:   { fontSize: 20, color: '#aaa' },
+  legendLabel: { fontSize: 13, color: '#f0f0f0' },
+  foodsLabel:  { fontSize: 18, fontWeight: '700', marginTop: 28, marginBottom: 8, color: '#f0f0f0' },
+  foodRow:     { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', minHeight: 50, borderBottomWidth: 1, borderBottomColor: '#2a2a2a' },
+  foodName:    { fontSize: 15, color: '#f0f0f0' },
+  foodArrow:   { fontSize: 20, color: '#555' },
 });
