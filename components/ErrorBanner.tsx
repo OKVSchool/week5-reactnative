@@ -20,6 +20,6 @@ export default function ErrorBanner({ message, onDismiss }: Props) {
 }
 
 const styles = StyleSheet.create({
-  banner: { backgroundColor: '#D32F2F', paddingVertical: 10, paddingHorizontal: 16, position: 'absolute', top: 0, left: 0, right: 0, zIndex: 999 },
+  banner: { backgroundColor: '#D32F2F', paddingVertical: 10, paddingHorizontal: 16, position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: 999 },
   text:   { color: '#fff', fontSize: 13, fontWeight: '600' },
 });
